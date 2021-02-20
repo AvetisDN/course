@@ -346,6 +346,7 @@ template {
   font-size: 16px;
   background: #f0f4f7 url(../img/bg.jpg) fixed center center;
   background-size: cover;
+  color: #011F3B;
 }
 
 input, button, select, datalist, textarea {
@@ -395,6 +396,11 @@ button:focus {
     margin: 0;
     border-radius: 0;
     min-height: 100vh;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .wrapper {
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 539px) {
@@ -496,6 +502,7 @@ button:focus {
 @media screen and (max-width: 1199px) {
   .left {
     position: fixed;
+    z-index: 9999;
     top: 0;
     left: -17rem;
     height: 100vh;
@@ -549,6 +556,190 @@ button:focus {
 @media screen and (max-width: 1199px) {
   .main {
     padding: 2rem;
+  }
+}
+.right {
+  background-color: #fff;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.right-user {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.right-user__img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  margin-right: 1.5rem;
+}
+.right-user__img img {
+  width: 100%;
+}
+.right-user__name {
+  margin-right: 1.5rem;
+}
+.right-user__more {
+  color: #9cabb8;
+}
+.right h4, .right h5, .right h6 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.right h4 {
+  margin: 3rem 0 1rem;
+}
+.right h5 {
+  font-size: 1rem;
+  margin: 0 0 0.25rem 0;
+}
+.right h6 {
+  font-size: 0.9rem;
+  margin: 0 0 0.25rem 0;
+}
+.right-progress .progress {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.right-progress .progress-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.right-progress .progress-item__info {
+  display: flex;
+  align-items: center;
+}
+.right-progress .progress-item__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.4rem;
+  background: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+.right-progress .progress-item__icon .icon-edit {
+  font-size: 1.33rem;
+}
+.right-progress .progress-item__icon .icon-photo {
+  font-size: 1.1rem;
+  transform: translateX(-1px);
+}
+.right-progress .progress-item__icon .icon-animation {
+  font-size: 0.7rem;
+  transform: translateX(-7px);
+}
+.right-progress .progress-item__icon .icon-chat {
+  font-size: 1.25rem;
+  transform: translateX(-1px);
+}
+.right-progress .progress-item__icon .icon-cube {
+  font-size: 1.5rem;
+}
+.right-progress .progress-item__text {
+  margin-right: 2rem;
+}
+.right-progress .progress-item__text span {
+  font-size: 0.8rem;
+  color: #63788b;
+}
+.right-progress .progress-item__bar {
+  width: 6.5rem;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #aaa;
+  position: relative;
+}
+.right-progress .progress-item__bar span {
+  position: absolute;
+  display: block;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #000;
+}
+.right-progress .progress-item.primary .progress-item__icon {
+  color: #5E81F4;
+  background-color: #e8ecf9;
+}
+.right-progress .progress-item.primary .progress-item__bar {
+  background-color: #e8ecf9;
+}
+.right-progress .progress-item.primary .progress-item__bar span {
+  background-color: #5E81F4;
+}
+.right-progress .progress-item.secondary .progress-item__icon {
+  color: #FFAE33;
+  background-color: #faf0e1;
+}
+.right-progress .progress-item.secondary .progress-item__bar {
+  background-color: #faf0e1;
+}
+.right-progress .progress-item.secondary .progress-item__bar span {
+  background-color: #FFAE33;
+}
+.right-progress .progress-item.tertirary .progress-item__icon {
+  color: #0CC3E7;
+  background-color: #e1f4f8;
+}
+.right-progress .progress-item.tertirary .progress-item__bar {
+  background-color: #e1f4f8;
+}
+.right-progress .progress-item.tertirary .progress-item__bar span {
+  background-color: #0CC3E7;
+}
+.right-banner {
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .right {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .right > div {
+    flex-basis: 50%;
+  }
+  .right-user {
+    order: 3;
+  }
+  .right-progress {
+    order: 1;
+    padding-right: 2rem;
+  }
+  .right-tasks {
+    order: 2;
+  }
+  .right-banner {
+    order: 4;
+  }
+}
+@media screen and (max-width: 768px) {
+  .right {
+    flex-direction: column;
+  }
+  .right > div {
+    flex-basis: 100%;
+  }
+  .right-user {
+    order: 1;
+  }
+  .right-progress {
+    order: 2;
+    padding-right: 2rem;
+  }
+  .right-tasks {
+    order: 3;
+  }
+  .right-banner {
+    order: 4;
   }
 }
 

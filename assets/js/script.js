@@ -5,3 +5,7 @@ burger.onclick = function(e) {
     leftSidebar.classList.toggle('open')
 }
 
+const progBars = document.querySelectorAll('.progress-item__bar>span')
+progBars.forEach((bar, index) => {
+    bar.style.width = bar.getAttribute('data-progress')
+})

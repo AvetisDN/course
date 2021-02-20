@@ -91,6 +91,7 @@
 @media screen and (max-width: 1199px) {
     .left {
         position: fixed;
+        z-index: 9999;
         top: 0;
         left: -17rem;
         height: 100vh;

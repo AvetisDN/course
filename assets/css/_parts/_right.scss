@@ -1,0 +1,176 @@
+.right {
+    background-color: $right-bg;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    &-user {
+        display: flex;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        &__img {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: .75rem;
+            margin-right: 1.5rem;
+            img {
+                width: 100%;
+            }
+        }
+        &__name {
+            margin-right: 1.5rem;
+        }
+        &__more {
+            color: desaturate(lighten($text-color, 55%), 80%);
+        }
+    }
+    h4, h5, h6 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    h4 {
+        margin: 3rem 0 1rem;
+    }
+    h5 {
+        font-size: 1rem;
+        margin: 0 0 .25rem 0;
+    }
+    h6 {
+        font-size: .9rem;
+        margin: 0 0 .25rem 0;
+    }
+    &-progress {
+        .progress {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            &-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 1rem 0;
+                &__info {
+                    display: flex;
+                    align-items: center;
+                }
+                &__icon {
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: .4rem;
+                    background: #aaa;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 1rem;
+                    .icon-edit {
+                        font-size: 1.33rem;
+                    }
+                    .icon-photo {
+                        font-size: 1.1rem;
+                        transform: translateX(-1px);
+                    }
+                    .icon-animation {
+                        font-size: .7rem;
+                        transform: translateX(-7px);
+                    }
+                    .icon-chat {
+                        font-size: 1.25rem;
+                        transform: translateX(-1px);
+                    }
+                    .icon-cube {
+                        font-size: 1.5rem;
+                    }
+                }
+                &__text {
+                    margin-right: 2rem;
+                    span {
+                        font-size: .8rem;
+                        color: desaturate(lighten($text-color, 35%), 80%);
+                    }
+                }
+                &__bar {
+                    width: 6.5rem;
+                    height: .5rem;
+                    border-radius: .25rem;
+                    background-color: #aaa;
+                    position: relative;
+                    span {
+                        position: absolute;
+                        display: block;
+                        height: .5rem;
+                        border-radius: .25rem;
+                        background-color: #000;
+                    }
+                }
+
+                &.primary {
+                    .progress-item__icon {
+                        color: $primary;
+                        background-color: desaturate(lighten($primary, 28%), 30%);
+                    }
+                    .progress-item__bar {
+                        background-color: desaturate(lighten($primary, 28%), 30%);
+                        span {
+                            background-color: $primary;
+                        }
+                    }
+                }
+
+                &.secondary {
+                    .progress-item__icon {
+                        color: $secondary;
+                        background-color: desaturate(lighten($secondary, 33%), 30%);
+                    }
+                    .progress-item__bar {
+                        background-color: desaturate(lighten($secondary, 33%), 30%);
+                        span {
+                            background-color: $secondary;
+                        }
+                    }
+                }
+                &.tertirary {
+                    .progress-item__icon {
+                        color: $tertirary;
+                        background-color: desaturate(lighten($tertirary, 45%), 30%);
+                    }
+                    .progress-item__bar {
+                        background-color: desaturate(lighten($tertirary, 45%), 30%);
+                        span {
+                            background-color: $tertirary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-banner {
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        &>div {
+            flex-basis: 50%;
+        }
+        &-user {order: 3;}
+        &-progress {order: 1; padding-right: 2rem;}
+        &-tasks {order: 2;}
+        &-banner {order: 4;}
+    }
+}
+@media screen and (max-width: 768px) {
+    .right {
+        flex-direction: column;
+        &>div {
+            flex-basis: 100%;
+        }
+        &-user {order: 1;}
+        &-progress {order: 2; padding-right: 2rem;}
+        &-tasks {order: 3;}
+        &-banner {order: 4;}
+    }
+}
