@@ -1,0 +1,20 @@
+
+.icon-search:before { content: '\e800'; } /* '' */
+.icon-bell:before { content: '\e801'; } /* '' */
+.icon-down-open:before { content: '\e802'; } /* '' */
+.icon-left-open:before { content: '\e803'; } /* '' */
+.icon-right-open:before { content: '\e804'; } /* '' */
+.icon-up-open:before { content: '\e805'; } /* '' */
+.icon-play:before { content: '\e806'; } /* '' */
+.icon-pause:before { content: '\e807'; } /* '' */
+.icon-stop:before { content: '\e808'; } /* '' */
+.icon-animation:before { content: '\e809'; } /* '' */
+.icon-all:before { content: '\e80a'; } /* '' */
+.icon-chat:before { content: '\e80b'; } /* '' */
+.icon-cube:before { content: '\e80c'; } /* '' */
+.icon-dashboard:before { content: '\e80d'; } /* '' */
+.icon-edit:before { content: '\e80e'; } /* '' */
+.icon-folder:before { content: '\e80f'; } /* '' */
+.icon-photo:before { content: '\e810'; } /* '' */
+.icon-profile:before { content: '\e811'; } /* '' */
+.icon-settings:before { content: '\e812'; } /* '' */

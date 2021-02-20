@@ -1,0 +1,14 @@
+.main {
+    padding: 3rem 2.5rem;
+    flex-grow: 1;
+    &-header {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .main {
+        padding: 2rem;
+    }
+}
