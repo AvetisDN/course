@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -349,6 +350,10 @@ template {
   color: #011F3B;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
 input, button, select, datalist, textarea {
   border-radius: 0.625rem;
   background-color: #fff;
@@ -389,6 +394,26 @@ button:focus {
   overflow: hidden;
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.1) 0 5px 15px;
+}
+
+.form-control {
+  position: relative;
+  display: block;
+  color: #8d9eae;
+}
+.form-control input {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem 1rem 3.5rem;
+  border-radius: 0.6rem;
+  background-color: #fff;
+  border: 0;
+  outline: 0;
+  transition: 0.2s ease;
+  color: inherit;
+}
+.form-control input:focus {
+  box-shadow: rgba(85, 102, 119, 0.3) 0 2px 5px;
 }
 
 @media screen and (max-width: 1599px) {
@@ -547,15 +572,160 @@ button:focus {
 .main {
   padding: 3rem 2.5rem;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 .main-header {
   display: flex;
   justify-content: space-between;
 }
+.main-header__search {
+  flex-basis: 50%;
+}
+.main-header__search .form-control::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-family: "fontello";
+}
+.main-header__controls {
+  display: flex;
+  align-items: center;
+}
+.main-header__controls a {
+  color: #708599;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  transition: 0.2s ease;
+  margin-right: 1rem;
+}
+.main-header__controls a:hover {
+  background-color: rgba(85, 102, 119, 0.1);
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0 1.25rem;
+}
+.main-nav__heading {
+  font-size: 1.75rem;
+}
+.main-nav__menu {
+  display: flex;
+}
+.main-nav__menu a {
+  display: block;
+  position: relative;
+  margin-left: 3rem;
+  color: #7e91a3;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+.main-nav__menu a.active, .main-nav__menu a:hover {
+  color: #5E81F4;
+}
+.main-nav__menu a.active::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 26%;
+  height: 2px;
+  border-radius: 1px;
+  background: #5E81F4;
+  left: 37%;
+  top: 125%;
+}
+.main-content {
+  flex-grow: 1;
+}
+.main-content__grid {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2.5rem;
+  column-gap: 2.5rem;
+}
+.main-content__grid .course {
+  flex-grow: 1;
+  min-height: 250px;
+  border-radius: 0.6rem;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+.main-content__grid .course-wide {
+  flex-basis: 100%;
+}
+.main-content__grid .course-title, .main-content__grid .course-duration, .main-content__grid .course-play, .main-content__grid .course-avatar {
+  position: absolute;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(25px);
+}
+.main-content__grid .course-title {
+  left: 1rem;
+  top: 1rem;
+}
+.main-content__grid .course-title h3 {
+  margin-top: 0;
+}
+.main-content__grid .course-duration {
+  right: 1rem;
+  top: 1rem;
+}
+.main-content__grid .course-play {
+  left: 1rem;
+  bottom: 1rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-content__grid .course-play::after {
+  display: block;
+  content: "";
+  font-family: "fontello";
+  font-size: 1.5rem;
+}
+.main-content__grid .course-avatar {
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 2px solid #f5f5fb;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main-content__grid .course-avatar img {
+  width: 100%;
+}
 
 @media screen and (max-width: 1199px) {
   .main {
     padding: 2rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .main-content__grid {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 599px) {
+  .main-header__search {
+    flex-grow: 1;
+    padding-right: 1rem;
   }
 }
 .right {

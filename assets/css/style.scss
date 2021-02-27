@@ -8,7 +8,9 @@
     background-size: cover;
     color: $text-color;
 }
-
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 600;
+}
 input, button, select, datalist, textarea {
     border-radius: .625rem;
     background-color: $left-bg;
@@ -46,6 +48,26 @@ button:focus {
     overflow: hidden;
     display: flex;
     box-shadow: rgba(0,0,0,.1) 0 5px 15px;
+}
+
+.form-control {
+    position: relative;
+    display: block;
+    color: lighten(desaturate($text-color, 80%), 50%);
+    input {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem 1rem 3.5rem;
+        border-radius: .6rem;
+        background-color: $left-bg;
+        border: 0;
+        outline: 0;
+        transition: .2s ease;
+        color: inherit;
+        &:focus {
+            box-shadow: rgba($dark-bg, .3) 0 2px 5px;
+        }
+    }
 }
 
 @media screen and (max-width: 1599px) {

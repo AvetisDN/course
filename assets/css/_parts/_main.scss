@@ -1,14 +1,159 @@
 .main {
     padding: 3rem 2.5rem;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     &-header {
         display: flex;
         justify-content: space-between;
+        &__search {
+            flex-basis: 50%;
+            .form-control::after {
+                display: block;
+                content: '\e800';
+                position: absolute;
+                top: 1rem;
+                left: 1.5rem;
+                font-family: 'fontello';
+            }
+        }
+        &__controls {
+            display: flex;
+            align-items: center;
+            a {
+                color: lighten(desaturate($text-color, 80%), 40%);
+                font-size: 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2.4rem;
+                height: 2.4rem;
+                border-radius: 50%;
+                transition: .2s ease;
+                margin-right: 1rem;
+                &:hover {
+                    background-color: rgba($dark-bg, .1);
+                }
+            }
+        }
+    }
+    &-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1.5rem 0 1.25rem;
+        &__heading {
+            font-size: 1.75rem;
+        }
+        &__menu {
+            display: flex;
+            a {
+                display: block;
+                position: relative;
+                margin-left: 3rem;
+                color: desaturate(lighten($text-color, 45%), 80%);
+                font-weight: 600;
+                transition: .2s ease;
+                &.active, &:hover {
+                    color: $primary;
+                }
+                &.active::after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    width: 26%;
+                    height: 2px;
+                    border-radius: 1px;
+                    background: $primary;
+                    left: 37%;
+                    top: 125%;
+                }
+            }
+        }
+    }
+    &-content {
+        flex-grow: 1;
+        &__grid {
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 2.5rem;
+            column-gap: 2.5rem;
+            .course {
+                flex-grow: 1;
+                min-height: 250px;
+                border-radius: .6rem;
+                background-position: center center;
+                background-size: cover;
+                position: relative;
+                &-wide {
+                    flex-basis: 100%;
+                }
+                &-title, &-duration, &-play, &-avatar {
+                    position: absolute;
+                    color: $left-bg;
+                    padding: 1rem;
+                    border-radius: .4rem;
+                    background-color: rgba(0,0,0,.3);
+                    backdrop-filter: blur(25px);
+                }
+                &-title {
+                    left: 1rem;
+                    top: 1rem;
+                    h3 {
+                        margin-top: 0;
+                    }
+                }
+                &-duration {
+                    right: 1rem;
+                    top: 1rem;
+                }
+                &-play {
+                    left: 1rem;
+                    bottom: 1rem;
+                    width: 3rem;
+                    height: 3rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &::after {
+                        display: block;
+                        content: '\e806';
+                        font-family: 'fontello';
+                        font-size: 1.5rem;
+                    }
+                }
+                &-avatar {
+                    right: 1rem;
+                    bottom: 1rem;
+                    padding: 0;
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    border: 2px solid $main-bg;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 }
 
 @media screen and (max-width: 1199px) {
     .main {
         padding: 2rem;
+    }
+}
+@media screen and (max-width: 767px) {
+    .main-content__grid {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 599px) {
+    .main-header__search {
+        flex-grow: 1;
+        padding-right: 1rem;
     }
 }
